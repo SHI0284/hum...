@@ -1,0 +1,32 @@
+{
+  "fullscreen": false,
+  "developer_mode": true,
+  "window_size": 720,
+  "record_seconds": 5,
+  "processing_minimum_seconds": 2.0,
+  "sample_rate": 44100,
+  "channels": 1,
+  "audio_input_device": null,
+  "audio_output_device": null,
+  "initial_volume": 0.7,
+  "boot_seconds": 6.6,
+  "idle_exhibition_seconds": 600,
+  "show_feature_values": true,
+  "sensor_enabled": false,
+  "sensor_gpio_pin": 17,
+  "sensor_pull_up": true,
+  "sensor_bounce_seconds": 0.3,
+  "max_recordings": 30,
+  "device_graphics_dir": "assets/device_graphics",
+  "gradient_manifest": "assets/device_graphics/gradients/gradient_manifest.json",
+  "generated_results_dir": "assets/generated_results",
+  "composer_canvas_size": 720,
+  "composer_graphic_family": "A",
+  "composer_gradient_opacity": 0.16,
+  "analysis": {
+    "day_brightness_threshold": 0.52,
+    "layer_count_thresholds": [0.2, 0.4, 0.62, 0.78, 0.9],
+    "low_band_hz": 300,
+    "high_band_hz": 2000
+  }
+}
