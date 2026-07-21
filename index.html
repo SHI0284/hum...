@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <title>HumO — Catch that sounds</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="device" aria-live="polite">
+    <header class="steps" aria-label="HumO steps">
+      <button class="sound" id="soundButton" aria-label="소리 조절"><img src="assets/icon_sound.svg" alt=""></button>
+      <div class="step-line"></div>
+      <button class="step active" data-screen="home" aria-label="홈"><img src="assets/6483788.svg" alt=""></button>
+      <button class="step" data-screen="record" aria-label="녹음"><img src="assets/6483791.svg" alt=""></button>
+      <button class="step" data-screen="archive" aria-label="목록"><img src="assets/6483789.svg" alt=""></button>
+      <button class="step" data-screen="artwork" aria-label="아트워크"><img src="assets/6483790.svg" alt=""></button>
+    </header>
+
+    <section class="screen active" id="home">
+      <h1>Catch that sounds...</h1>
+      <button class="orbit-stage" data-next="record" aria-label="녹음 화면으로 이동">
+        <img class="logo-art" src="assets/logo_image.png" alt="">
+        <span class="ring ring-1"></span><span class="ring ring-2"></span><span class="ring ring-3 detailed"></span>
+      </button>
+    </section>
+
+    <section class="screen" id="record">
+      <button class="wave-panel" id="recordButton" aria-label="녹음 시작">
+        <span class="wave" id="wave"></span>
+      </button>
+      <div class="timer" id="timer">00:00</div>
+      <p class="hint">화면을 눌러 5초 동안 소리를 담아보세요.</p>
+    </section>
+
+    <section class="screen archive" id="archive">
+      <div class="archive-tools"><button class="filter active">TIME</button><button class="filter">♥ FAVORITES</button></div>
+      <div class="rows">
+        <article class="row"><div><strong>26.07.21&nbsp; 15:07</strong><small>00:05</small></div><button class="heart">♡</button><button class="play">▶</button><button class="choose" aria-label="아트워크 선택"></button></article>
+        <article class="row"><div><strong>26.07.15&nbsp; 23:43</strong><small>00:05</small></div><button class="heart selected">♥</button><button class="play">▶</button><button class="choose" aria-label="아트워크 선택"></button></article>
+      </div>
+      <p class="hint">오른쪽 원을 눌러 오늘의 소리를 선택하세요.</p>
+    </section>
+
+    <section class="screen" id="processing">
+      <h1>Humming...</h1>
+      <div class="orbit-stage processing"><span class="ring ring-1"></span><span class="ring ring-2"></span><span class="ring ring-3 detailed"></span></div>
+      <p class="hint">선택한 소리를 분석해 아트워크를 만들고 있어요.</p>
+    </section>
+
+    <section class="screen" id="artwork">
+      <h1>Hum list : D150716310644</h1>
+      <div class="orbit-stage artwork-stage">
+        <img class="result-art" src="assets/result_57.png" alt="생성된 Hum 아트워크">
+        <span class="ring ring-1"></span><span class="ring ring-2"></span><span class="ring ring-3 detailed"></span>
+      </div>
+      <div class="actions"><button id="again">↻<span>AGAIN</span></button><button id="listen">▶<span>LISTEN</span></button><button>♥<span>LEAVE</span></button><button id="list">···<span>LIST</span></button></div>
+    </section>
+
+    <div class="dots"><i></i><i></i><i></i><i></i></div>
+
+    <aside class="volume-overlay" id="volumeOverlay" aria-hidden="true">
+      <button class="sound enlarged" aria-label="소리 조절 닫기"><img id="overlaySoundIcon" src="assets/icon_sound.svg" alt=""></button>
+      <span class="plus">+</span>
+      <input id="volume" type="range" min="0" max="100" value="70" orient="vertical" aria-label="음량">
+      <span class="minus">−</span>
+    </aside>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
